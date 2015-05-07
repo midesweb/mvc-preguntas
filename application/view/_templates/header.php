@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>MINI</title>
+    <title><?php echo (isset($this->titulo))? $this->titulo : "Mini" ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,13 +16,14 @@
 <body>
     <!-- logo -->
     <div class="logo">
-        MINI
+        FAQ
     </div>
 
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/exampleone">subpage</a>
+        <a href="<?php echo URL; ?>preguntas/todas">Preguntas</a>
+        <a href="<?php echo URL; ?>preguntas/crear">Insertar</a>
         <a href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
         <a href="<?php echo URL; ?>songs">songs</a>
     </div>

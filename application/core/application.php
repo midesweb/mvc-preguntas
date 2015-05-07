@@ -52,11 +52,19 @@ class Application
                     $this->url_controller->index();
                 }
                 else {
-                    header('location: ' . URL . 'error');
+                    header('HTTP/1.0 404 Not Found');
+                    require APP . 'controller/error.php';
+                    $cont_error = new Error("Esa accion no existe");
+                    $cont_error->index();
                 }
             }
         } else {
-            header('location: ' . URL . 'error');
+            header('HTTP/1.0 404 Not Found');
+            require APP . 'controller/error.php';
+            $cont_error = new Error("Ese controlador no existe");
+            $cont_error->index();
+            //exit();
+            //header('location: ' . URL . 'error');
         }
     }
 
